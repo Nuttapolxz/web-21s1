@@ -24,7 +24,23 @@ const routes: Array<RouteConfig> = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/teams/usa',
+    name: 'TeamDetails',
+    component: TeamDetails
+  },
+  {
+    path: '/teams',
+    name: 'TeamList',
+    component: TeamList
+  },
+  {
+    path: '/teams/new',
+    name: 'TeaCreate',
+    component: TeamCreate
   }
+
 ]
 
 const router = new VueRouter({
