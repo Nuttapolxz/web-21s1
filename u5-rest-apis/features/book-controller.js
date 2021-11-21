@@ -106,6 +106,22 @@ const updateBook = async (req, res) => {
     res.sendStatus(500)
   }
 }
+const deleteBook = async (req, res) => {
+  try {
+    // 1. Inputs
+    const isbn13 = req.params.isbn13
+
+    // 2. Query
+    const query = db.collection('books').doc(isbn13).delete()
+
+    // 3. Response
+    await query
+    res.sendStatus(200)
+  } catch (err) {
+    console.error(err)
+    res.sendStatus(500)
+  }
+}
 
 
 module.exports = {
@@ -113,5 +129,6 @@ module.exports = {
   readBook,
   createBook,
   replaceBook,
-  updateBook
+  updateBook,
+  deleteBook
 }
