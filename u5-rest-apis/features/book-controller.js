@@ -53,9 +53,27 @@ const readBook = async (req, res) => {
     res.status(500).json({ result: 'error' })
   }
 }
+const createBook = async (req, res) => {
+  try {
+    // 1. Inputs
+    const { isbn13, title, authors, description, pages } = req.body
+    const book = { isbn13, title, authors, description, pages: parseInt(pages) }
+
+    // 2. Query
+    const query = db.collection('books').doc(isbn13).set(book, { merge: true })
+
+    // 3. Response
+    await query
+    res.sendStatus(201)
+  } catch (err) {
+    console.error(err)
+    res.sendStatus(500)
+  }
+}
 
 
 module.exports = {
   readBooks,
-  readBook
+  readBook,
+  createBook
 }
