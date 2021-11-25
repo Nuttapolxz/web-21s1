@@ -3,6 +3,7 @@ const expHbs = require('express-handlebars')
 const { json, urlencoded } = require('body-parser')
 
 const { index } = require('./features/index-controller')
+const { CinemaList, CinemaDetails } = require('./features/cinema-controller')
 
 const app = express()
 
@@ -10,7 +11,8 @@ const app = express()
 app.set('views', './views')
 app.set('view engine', 'hbs')
 app.engine(
-  'hbs',expHbs({
+  'hbs',
+  expHbs({
     extname: '.hbs',
     defaultLayout: false,
     partialsDir: ['./views/partials', './views/layouts']
@@ -24,5 +26,7 @@ app.use(urlencoded({ extended: false }))
 
 // Routes
 app.get('/', index)
+app.get('/cinemas', cinemaList)
+app.get('/cinemas/:slug', cinemaDetails)
 
 module.exports = { app }
