@@ -1,0 +1,20 @@
+# Secrets
+firebase-config*.json
+firebase-config*.js
+firebase-config*.ts
+service-account*.json
+service-account*.js
+service-account*.ts
+
+# Build & Deps
+node_modules
+build
+dist
+lib
+.firebase
+
+# Logs
+*.log
+
+# OS
+.DS_Store

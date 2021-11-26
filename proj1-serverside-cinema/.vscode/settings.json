@@ -11,7 +11,6 @@
   "editor.quickSuggestions": { "strings": true },
   "editor.rulers": [80], // Same as Prettier
   "editor.tabSize": 2,
-  "eslint.codeAction.showDocumentation": true,
   "eslint.enable": true,
   "eslint.format.enable": false, // Enabled via codeActionsOnSave (known order)
   "eslint.lintTask.enable": true,

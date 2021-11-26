@@ -14,6 +14,9 @@ const app = express()
 app.set('views', './views')
 app.set('view engine', 'hbs')
 app.engine('hbs', expHbs({
+app.engine(
+  'hbs',
+  expHbs({
     extname: '.hbs',
     defaultLayout: false,
     partialsDir: ['./views/partials', './views/layouts']
