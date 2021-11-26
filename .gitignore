@@ -9,3 +9,12 @@ node_modules
 
 # OS
 .DS_Store
+proj2-clientside-cinema/.vscode/settings.json
+proj2-clientside-cinema/package.json
+proj2-clientside-cinema/yarn.lock
+U6 - Shortcut.lnk
+U6/.vscode/settings.json
+U6/eslintrc.js
+U6/prettierrc
+U6/.eslintrc.js
+U6/.prettierrc
