@@ -21,7 +21,8 @@ const bookingForm = async (req, res) => {
 const bookingSubmit = async (req, res) => {
   try {
     // 1. Inputs
-    const { screeningSlug, seats } = req.body
+    const { screeningSlug, seats: seatsRaw } = req.body
+    const seats = Array.isArray(seatsRaw) ? seatsRaw : [seatsRaw]
 
     // 2. Query
     const queryScreenings = db.collection('screenings').doc(screeningSlug).get()

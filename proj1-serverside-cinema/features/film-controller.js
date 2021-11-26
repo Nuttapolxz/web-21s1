@@ -40,8 +40,8 @@ const filmDetails = async (req, res) => {
 
     // 3. Response
     const film = (await queryFilm).data()
-    const filmDetails = (await queryScreenings).docs.map((doc) => doc.data())
-    res.render('film-details', { film, filmDetails })
+    const screenings = (await queryScreenings).docs.map((doc) => doc.data())
+    res.render('film-details', { film, screenings })
   } catch (err) {
     console.error(err)
     res.render('res-error')
